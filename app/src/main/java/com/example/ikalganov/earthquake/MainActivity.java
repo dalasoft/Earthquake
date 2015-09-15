@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -84,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
         switch (item.getItemId()) {
             case (MENU_PREFERENCES): {
-                Intent i = new Intent(this, PreferencesActivity.class);
+                Class c = /*Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB ?*/ PreferencesActivity.class /*: FragmentPreferences.class*/;
+                Intent i = new Intent(this, c);
                 startActivityForResult(i, SHOW_PREFERENCES);
                 return  true;
             }
