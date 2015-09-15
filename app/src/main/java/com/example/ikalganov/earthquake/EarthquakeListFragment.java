@@ -94,7 +94,7 @@ public class EarthquakeListFragment extends ListFragment {
                         String point = g.getFirstChild().getNodeValue();
                         String dt = when.getFirstChild().getNodeValue();
 
-                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'Z'");
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.S'Z'");
                         Date qdate = new GregorianCalendar(0, 0, 0).getTime();
                         try {
                             qdate = sdf.parse(dt);
