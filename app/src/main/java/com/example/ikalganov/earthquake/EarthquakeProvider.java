@@ -21,7 +21,7 @@ import java.sql.SQLException;
  * Created by IKalganov on 18.09.2015.
  */
 public class EarthquakeProvider extends ContentProvider {
-    public static final Uri CONTENT_URI = Uri.parse("com.example.ikalganov.earthquakeprovider/earthquakes");
+    public static final Uri CONTENT_URI = Uri.parse("content://com.example.ikalganov.earthquakeprovider/earthquakes");
 
     public static final String KEY_ID = "_id";
     public static final String KEY_DATE = "date";

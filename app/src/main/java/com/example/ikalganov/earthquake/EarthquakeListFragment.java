@@ -125,7 +125,11 @@ public class EarthquakeListFragment extends ListFragment implements LoaderManage
                         int end = magnitudeString.length() - 1;
                         double magnitude = Double.parseDouble(magnitudeString.substring(0, end));
 
-                        details = details.split(",")[1].trim();
+                        try {
+                            details = details.split(",")[1].trim();
+                        } catch (ArrayIndexOutOfBoundsException e) {
+                            Log.d(TAG, "String not containing ',' delimeter", e);
+                        }
 
                         final Quake quake = new Quake(qdate, details, l, magnitude, linkString);
 
@@ -156,7 +160,7 @@ public class EarthquakeListFragment extends ListFragment implements LoaderManage
         String w = EarthquakeProvider.KEY_DATE + " = " + _quake.getDate().getTime();
 
         Cursor query = cr.query(EarthquakeProvider.CONTENT_URI, null, w, null, null);
-        if (query.getCount() == 0) {
+        if (query == null || query.getCount() == 0) {
             ContentValues values = new ContentValues();
 
             values.put(EarthquakeProvider.KEY_DATE, _quake.getDate().getTime());
