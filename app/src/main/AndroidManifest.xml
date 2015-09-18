@@ -21,6 +21,9 @@
         </activity>
         <activity android:name=".FragmentPreferences">
         </activity>
+        <provider
+            android:authorities="com.example.ikalganov.earthquakeprovider"
+            android:name=".EarthquakeProvider"/>
     </application>
 
 </manifest>
