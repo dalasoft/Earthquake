@@ -160,7 +160,7 @@ public class EarthquakeListFragment extends ListFragment implements LoaderManage
         String w = EarthquakeProvider.KEY_DATE + " = " + _quake.getDate().getTime();
 
         Cursor query = cr.query(EarthquakeProvider.CONTENT_URI, null, w, null, null);
-        if (query == null || query.getCount() == 0) {
+        if (query.getCount() == 0) {
             ContentValues values = new ContentValues();
 
             values.put(EarthquakeProvider.KEY_DATE, _quake.getDate().getTime());

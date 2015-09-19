@@ -157,12 +157,12 @@ public class EarthquakeProvider extends ContentProvider {
         private static final String DATABASE_CREATE =
                 "create table " + EARTHQUAKE_TABLE + " ("
                 + KEY_ID + " integer primary key autoincrement, "
-                + KEY_DATE + "INTEGER, "
+                + KEY_DATE + " INTEGER, "
                 + KEY_DETAILS + " TEXT, "
                 + KEY_SUMMARY + " TEXT, "
-                + KEY_LOCATION_LAT + " FLOAT, "
-                + KEY_LOCATION_LNG + " FLOAT, "
-                + KEY_MAGNITUDE + " FLOAT, "
+                + KEY_LOCATION_LAT + " REAL, "
+                + KEY_LOCATION_LNG + " REAL, "
+                + KEY_MAGNITUDE + " REAL, "
                 + KEY_LINK + " TEXT);";
 
         private SQLiteDatabase earthquakeDB;
