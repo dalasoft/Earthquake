@@ -3,6 +3,14 @@
     android:layout_width="match_parent"
     android:orientation="vertical">
 
+    <android.widget.SearchView
+        android:id="@+id/searchView"
+        android:iconifiedByDefault="false"
+        android:background="#FFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </android.widget.SearchView>
+
     <fragment android:name="com.example.ikalganov.earthquake.EarthquakeListFragment"
         android:id="@+id/EarthquakeListFragment"
         android:layout_width="match_parent"
